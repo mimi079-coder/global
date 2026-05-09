@@ -6,6 +6,12 @@
   <title>우리는 해외파 청년들 — 경계 너머</title>
   <link rel="stylesheet" href="style.css">
   <script src="https://cdn.jsdelivr.net/npm/globe.gl"></script>
+   <script>
+    // 뉴스마을에 물 전달                                                       
+    if (window.opener && !window.opener.closed) {                             
+      window.opener.postMessage({ type: 'nv_water' }, '*');                     
+    }                                                                         
+  </script>
 </head>
 <body>
 
