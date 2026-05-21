@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>포토 스토리 — 우리는 해외파 청년들</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="photo-header">
+  <a href="osaka.html" class="page-back">← 기사로</a>
+  <span class="photo-cat-label" id="cat-label"></span>
+  <span style="width:60px;"></span>
+</header>
+
+<div class="photo-upper">
+  <div class="slideshow" id="slideshow"></div>
+  <div class="slide-nav">
+    <button class="slide-btn" id="btn-prev">&#8592;</button>
+    <div class="slide-dots" id="dots"></div>
+    <span class="slide-counter" id="counter"></span>
+    <button class="slide-btn" id="btn-next">&#8594;</button>
+  </div>
+</div>
+
+<div class="photo-lower" id="interview-area"></div>
+
+<script>
+const DATA = {
+  '계기': {
+    photos: [
+      'photo/계기 1.jpeg'
+    ],
+    qa: [
+      {
+        q: '일본 워홀을 처음 생각하게 된 계기가 무엇인가요?',
+        a: '처음 생각했던 계기는 제가 원래도 애니메이션이나 일본 아이돌 밴드 이런 쪽에 관심이 많아서 그런 문화도 많이 접하다 보니 일본어 공부도 시작하게 됐어요. 그런 와중에 일본 워홀이라는 게 유튜브 알고리즘에 뜬 거예요. 사람들 브이로그를 보다 보니까 재밌겠는데 나도 해볼까 하는 생각이 들었고, 마침 3학년이었는데 4학년 올라가기 전에 휴학을 할 생각이었어서 그 1년 동안 워홀을 다녀오면 어떨까 라는 생각에 결심하게 됐습니다.'
+      },
+      {
+        q: '한국에서 스펙을 쌓을 수도 있었는데, 워홀을 선택한 이유가 있나요?',
+        a: '사실 저도 엄청나게 고민을 많이 했어요. 이미 공모전도 많이 나가고 과제나 시험에 엄청난 압박도 있었는데, 그 와중에 휴학하는 1년 동안 그런 것들을 계속 이어서 해야 한다는 게 좀 싫었어요. 워홀을 선택했던 가장 큰 이유는 세상을 좀 넓게 바라보기 위해서였어요. 새로운 사람들과 새로운 환경에서 생활하다 보면 뭔가 성장할 수 있는 또 다른 기회가 되지 않을까, 그리고 졸업을 앞둔 이 상황에서 조금 더 넓은 세상을 보게 해주지 않을까 라는 생각이 워홀을 선택하게 했습니다.'
+      }
+    ]
+  },
+  '준비': {
+    photos: [
+      'photo/준비 1.png',
+      'photo/준비 2.png'
+    ],
+    qa: [
+      {
+        q: '출발 전에 구체적으로 어떤 준비를 하셨나요?',
+        a: '언어 준비는 제일 예전부터 했는데, 비자 발급에 일본어 자격증이 꼭 필요한 건 아니에요. 그렇지만 1년 동안 거기서 살아야 되니까 어느 정도 의사소통이 되어야 한다고 생각해서 1년 동안 공부해서 JLPT N2를 취득했어요. 해커스 같은 인터넷 강의를 들으면서 독학했고요. 비자는 일본이 1년에 4번 심사가 이루어지는데, 저는 마지막 4분기 비자를 위해 9월부터 준비해서 10월에 서류를 제출하고 11월에 결과가 나오자마자 바로 떠날 준비를 했어요.'
+      },
+      {
+        q: '비용은 어느 정도 필요하고, 비자 심사 팁이 있다면요?',
+        a: '비자를 발급받을 때 통장에 280만 원 이상은 무조건 있어야 하고요, 실제로 와서 거주해보니 초기 정착 비용이 천만 원은 들어요. 요즘에는 미리 다 모아서 들고 오시는 분들이 많은데, 한 2500만 원 정도면 1년 동안 일 안 하고 살 수 있는 것 같습니다. 비자 심사에서 중요한 건, 일 관련으로 쓰는 것보다 홀리데이를 어떻게 보낼 거냐를 중점적으로 써야 해요. 저 같은 경우엔 월별로 가고 싶은 페스티벌이나 마츠리 리스트를 짜서 제출했고, 그게 도움이 됐던 것 같습니다.'
+      }
+    ]
+  },
+  '생활': {
+    photos: [
+      'photo/생활 1.jpeg',
+      'photo/생활 2.jpeg'
+    ],
+    qa: [
+      {
+        q: '막상 가보니 준비했던 것과 다르게 느껴진 부분이 있었나요?',
+        a: '매일매일이 새로울 줄 알았는데 생각보다 막상 가서 살아보니 진짜 똑같이 사람 사는 것 같고, 주거 지역 주변을 돌아다니다 보면 정말 한국과 별반 다를 바가 없다는 걸 느낄 때가 많아요. 언어 불편함은 어느 정도 회화가 돼서 심각하진 않은데, 존경어나 겸양어 같은 표현은 처음에 멈칫했던 때가 있었어요.'
+      },
+      {
+        q: '일본에서 생활하면서 겪은 가장 큰 문화 차이가 있었나요?',
+        a: '확실히 거리를 지나다니다 보면 한국에 비해서 자전거를 탄 사람이 진짜 많아요. 걸어 다니는 사람보다 자전거 탄 사람이 더 많은 것 같을 정도예요. 처음에 주거 지역을 걷고 있는데 인도가 좁음에도 자전거가 너무 많이 다녀서 치일 뻔했던 적도 많았어요. 실제로 한 번 치였고요. 공용 자전거 같은 것도 없어요. 한국은 킥보드 같은 것도 쉽게 대여할 수 있는 게 많은데, 일본은 거의 다 자기 자전거를 가지고 있어서 대여가 필요 없는 거예요.'
+      }
+    ]
+  },
+  '근교 여행': {
+    photos: [
+      'photo/근교 여행 1.jpeg',
+      'photo/근교 여행 2.jpeg'
+    ],
+    qa: [
+      {
+        q: '앞으로 남은 기간 동안 꼭 해보고 싶은 일이 있나요?',
+        a: '여름 축제도 가보고 싶고, 일본의 사계절을 제대로 느낄 수 있는 곳들을 좀 가볼 생각이에요. 오사카 근교에 교토라든지 고베라든지 근교도 되게 예쁜 곳들이 많으니까 한 번씩 가보려고 합니다. 그리고 킷사텐이라고 하는, 한국으로 치면 다방 같은 카페에서 알바도 해보고 싶어요.'
+      },
+      {
+        q: '이번 워홀 경험이 진로에 어떤 영향을 줄 것 같나요?',
+        a: '워홀을 하면서 유튜브도 하고 있어요. 여러 곳을 다니면서 촬영을 하고 기록으로 남기는 게 어떻게 보면 하나의 포트폴리오가 될 수도 있을 것 같고요. 세상을 바라보는 시야, 그리고 작은 것들에서도 예쁜 걸 발견하고 촬영하는 시선도 좀 성장한 것 같아요. 여러모로 시야가 넓어진 기분이에요.'
+      }
+    ]
+  },
+  '힐링': {
+    photos: [
+      'photo/힐링 1.jpeg',
+      'photo/힐링 2.jpeg'
+    ],
+    qa: [
+      {
+        q: '정말 잘 왔다고 느꼈던 순간이 있나요?',
+        a: '엄청 많아요. 한국과는 다른 풍경에서 앉아서 풍경을 바라볼 때도 그런 생각이 많이 들고, 일본에 혼자 있으니 아는 사람이 아무도 없잖아요. 그래서 약간 시선적인 자유가 있는 것 같아요. 눈치 보지 않아도 되고, 내가 외국인이다 보니까 실수해도 괜찮을 것 같은 기분이에요. 집 앞 주변에 산책을 할 때도 좋고, 새로운 거 먹으러 갈 때도 좋고, 가까운 데 여행 갈 때도 항상 좋다고 생각합니다.'
+      },
+      {
+        q: '워홀을 고민하는 분들에게 해주고 싶은 말이 있나요?',
+        a: '저도 마지막까지 엄청 고민을 했어요. 워홀은 다 놀러 가는 느낌이다, 스펙에도 도움 안 된다는 말을 듣기도 했는데, 저는 이번 워홀을 통해서 저에 대해서 조금 더 잘 알아갈 수 있는 시간이었어요. 남들처럼 뻔한 곳에 치중하는 것보다 스스로 성장할 수 있고 시야가 넓어지는, 남들은 경험 못 할 순간들이 되게 많아요. 이건 틀리고 맞고의 문제가 아니고 정말 한 번쯤 해보면 좋은 선택이에요. 그리고... 돈을 많이 챙겨서 오시길 바랍니다. 돈이 정말 많이 들거든요.'
+      }
+    ]
+  }
+};
+
+const cat = new URLSearchParams(location.search).get('cat') || '계기';
+const d = DATA[cat] || DATA['계기'];
+
+// Header label
+document.getElementById('cat-label').textContent = d === DATA[cat] ? cat : '계기';
+
+// Build slideshow
+const ss = document.getElementById('slideshow');
+const dotsEl = document.getElementById('dots');
+const counter = document.getElementById('counter');
+let cur = 0;
+
+d.photos.forEach((src, i) => {
+  const div = document.createElement('div');
+  div.className = 'slide' + (i === 0 ? ' active' : '');
+  const img = document.createElement('img');
+  img.src = src;
+  img.alt = cat + ' ' + (i + 1);
+  div.appendChild(img);
+  ss.appendChild(div);
+
+  const dot = document.createElement('span');
+  dot.className = 'sdot' + (i === 0 ? ' active' : '');
+  dot.onclick = () => goTo(i);
+  dotsEl.appendChild(dot);
+});
+
+function goTo(n) {
+  const slides = ss.querySelectorAll('.slide');
+  const dots = dotsEl.querySelectorAll('.sdot');
+  slides[cur].classList.remove('active');
+  dots[cur].classList.remove('active');
+  cur = n;
+  slides[cur].classList.add('active');
+  dots[cur].classList.add('active');
+  counter.textContent = (cur + 1) + ' / ' + slides.length;
+  updateInterviewArea();
+  updateBtns();
+}
+
+function updateBtns() {
+  document.getElementById('btn-prev').disabled = cur === 0;
+  document.getElementById('btn-next').disabled = cur === d.photos.length - 1;
+}
+
+document.getElementById('btn-prev').onclick = () => { if (cur > 0) goTo(cur - 1); };
+document.getElementById('btn-next').onclick = () => { if (cur < d.photos.length - 1) goTo(cur + 1); };
+
+// Build interview sections
+const area = document.getElementById('interview-area');
+d.photos.forEach((_, i) => {
+  const sec = document.createElement('div');
+  sec.className = 'interview-section' + (i === 0 ? ' active' : '');
+  sec.id = 'iv-' + i;
+
+  // Use same Q&A for all slides if fewer QAs than photos; otherwise map by index
+  const qaIndex = Math.min(i, d.qa.length - 1);
+  const qa = d.qa[qaIndex];
+
+  sec.innerHTML = `
+    <div class="interview-qa">
+      <p class="interview-q">${qa.q}</p>
+      <p class="interview-a">${qa.a}</p>
+    </div>
+  `;
+  area.appendChild(sec);
+});
+
+function updateInterviewArea() {
+  document.querySelectorAll('.interview-section').forEach((el, i) => {
+    el.classList.toggle('active', i === cur);
+  });
+}
+
+// Init
+counter.textContent = '1 / ' + d.photos.length;
+updateBtns();
+</script>
+</body>
+</html>

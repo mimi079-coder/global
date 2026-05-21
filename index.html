@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>우리는 해외파 청년들 — 경계 너머</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/globe.gl"></script>
+</head>
+<body>
+
+<header class="start-header">
+  <div class="vol">Vol. 1 &nbsp;·&nbsp; 2026</div>
+  <h1>우리는 해외파 청년들</h1>
+  <p class="tagline">경계 너머의 이야기</p>
+</header>
+
+<section class="globe-section">
+  <div class="globe-wrap">
+    <div id="globeViz"></div>
+  </div>
+</section>
+
+<section class="tickets-section">
+  <p class="tickets-intro">목적지를 선택하세요</p>
+
+  <!-- Wide feature ticket -->
+  <div class="tickets-feature-row">
+    <a href="main_article.html" class="ticket ticket-wide ticket-active">
+      <div class="tw-left">
+        <div class="t-head">
+          <span>BOARDING PASS</span>
+          <span class="t-class">FEATURE</span>
+        </div>
+        <div class="t-route">
+          <div class="t-airport">
+            <div class="t-code">ICN</div>
+            <div class="t-city">서울</div>
+          </div>
+          <div class="t-line">
+            <div class="dash"></div>
+            <span class="plane">✈</span>
+            <div class="dash"></div>
+          </div>
+          <div class="t-airport right">
+            <div class="t-code">WORLD</div>
+            <div class="t-city">해외 어딘가</div>
+          </div>
+        </div>
+        <div class="t-foot">
+          <div class="t-field">
+            <span class="flabel">발급</span>
+            <span class="fval">2026</span>
+          </div>
+          <div class="t-field">
+            <span class="flabel">분류</span>
+            <span class="fval">워킹홀리데이 트렌드</span>
+          </div>
+          <div class="t-field">
+            <span class="flabel">편수</span>
+            <span class="fval">Vol. 1</span>
+          </div>
+        </div>
+      </div>
+      <div class="tw-divider">
+        <span class="notch"></span>
+        <div class="dline-v"></div>
+        <span class="notch"></span>
+      </div>
+      <div class="tw-right">
+        <div class="tw-tag">해외파 청춘들</div>
+        <div class="tw-title">"취업 못 해서 간 거 아니에요"</div>
+        <div class="tw-sub">워홀러들이 진짜 짐을 싸는 이유</div>
+        <div class="tw-arrow">읽으러 가기 →</div>
+      </div>
+    </a>
+  </div>
+
+  <div class="tickets-row">
+
+    <!-- Osaka ticket -->
+    <a href="osaka.html" class="ticket ticket-active">
+      <div class="t-head">
+        <span>BOARDING PASS</span>
+        <span class="t-class">STORY</span>
+      </div>
+      <div class="t-route">
+        <div class="t-airport">
+          <div class="t-code">ICN</div>
+          <div class="t-city">서울</div>
+        </div>
+        <div class="t-line">
+          <div class="dash"></div>
+          <span class="plane">✈</span>
+          <div class="dash"></div>
+        </div>
+        <div class="t-airport right">
+          <div class="t-code">KIX</div>
+          <div class="t-city">오사카</div>
+        </div>
+      </div>
+      <div class="t-divider"><span class="notch"></span><div class="dline"></div><span class="notch"></span></div>
+      <div class="t-foot">
+        <div class="t-field">
+          <span class="flabel">이름</span>
+          <span class="fval">문윤정</span>
+        </div>
+        <div class="t-field">
+          <span class="flabel">주제</span>
+          <span class="fval">워킹홀리데이</span>
+        </div>
+        <div class="t-field">
+          <span class="flabel">편수</span>
+          <span class="fval">Vol. 1</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Willy ticket -->
+    <a href="willy.html" class="ticket ticket-active">
+      <div class="t-head">
+        <span>BOARDING PASS</span>
+        <span class="t-class">STORY</span>
+      </div>
+      <div class="t-route">
+        <div class="t-airport">
+          <div class="t-code">ICN</div>
+          <div class="t-city">서울</div>
+        </div>
+        <div class="t-line">
+          <div class="dash"></div>
+          <span class="plane">✈</span>
+          <div class="dash"></div>
+        </div>
+        <div class="t-airport right">
+          <div class="t-code">YVR</div>
+          <div class="t-city">캐나다</div>
+        </div>
+      </div>
+      <div class="t-divider"><span class="notch"></span><div class="dline"></div><span class="notch"></span></div>
+      <div class="t-foot">
+        <div class="t-field">
+          <span class="flabel">이름</span>
+          <span class="fval">윌리</span>
+        </div>
+        <div class="t-field">
+          <span class="flabel">주제</span>
+          <span class="fval">워킹홀리데이</span>
+        </div>
+        <div class="t-field">
+          <span class="flabel">편수</span>
+          <span class="fval">Vol. 2</span>
+        </div>
+      </div>
+    </a>
+
+
+  </div>
+</section>
+
+<section class="countries-section">
+  <div class="countries-inner">
+    <p class="countries-label">지금 어디로 갈 수 있을까</p>
+    <p class="countries-sub">한국과 워킹홀리데이 협정을 맺은 28개국 정보를 확인해보세요.</p>
+    <div class="ctab-bar" id="tabs"></div>
+    <div class="ccards-grid" id="cards"></div>
+    <div class="cdetail-panel" id="detail">
+      <div class="cdetail-header">
+        <span class="cdetail-flag" id="d-flag"></span>
+        <div>
+          <p class="cdetail-name" id="d-name"></p>
+          <p class="cdetail-region" id="d-region"></p>
+        </div>
+      </div>
+      <div class="cinfo-grid" id="d-grid"></div>
+      <p class="cinfo-note" id="d-note"></p>
+      <button class="cclose-btn" onclick="closeDetail()">닫기</button>
+    </div>
+  </div>
+</section>
+
+<script type="module">
+  import * as THREE from 'https://esm.sh/three';
+
+  const cities = [
+    { lat: 37.5665, lng: 126.9780, name: '서울', color: '#8a6b2e' },
+    { lat: 34.6937, lng: 135.5023, name: '오사카', color: '#b83030' },
+    { lat: -33.8688, lng: 151.2093, name: '시드니', color: '#1a6fc4' },
+    { lat: -36.8485, lng: 174.7633, name: '오클랜드', color: '#1a6fc4' },
+    { lat: 45.4215, lng: -75.6972, name: '오타와', color: '#1a6fc4' },
+    { lat: 51.5074, lng: -0.1278, name: '런던', color: '#1a6fc4' }
+  ];
+
+  const arcs = [
+    { startLat: 37.5665, startLng: 126.9780, endLat: 34.6937, endLng: 135.5023, color: 'japan', alt: 0.04 },
+    { startLat: 37.5665, startLng: 126.9780, endLat: -33.8688, endLng: 151.2093, color: 'blue', alt: 0.15 },
+    { startLat: 37.5665, startLng: 126.9780, endLat: -33.8688, endLng: 151.2093, color: 'yellow', alt: 0.15 },
+    { startLat: 37.5665, startLng: 126.9780, endLat: -36.8485, endLng: 174.7633, color: 'blue', alt: 0.15 },
+    { startLat: 37.5665, startLng: 126.9780, endLat: 45.4215, endLng: -75.6972, color: 'blue', alt: 0.15 },
+    { startLat: 37.5665, startLng: 126.9780, endLat: 51.5074, endLng: -0.1278, color: 'blue', alt: 0.15 }
+  ];
+
+  const world = Globe()
+    .width(520)
+    .height(520)
+    .backgroundColor('#edf2ff')
+    .globeImageUrl('https://cdn.jsdelivr.net/npm/three-globe/example/img/earth-day.jpg')
+    .showAtmosphere(true)
+    .atmosphereColor('#5599ee')
+    .atmosphereAltitude(0.28)
+    .pointsData(cities)
+    .pointColor('color')
+    .pointAltitude(0.01)
+    .pointRadius(0.5)
+    .ringsData([{ lat: 37.5665, lng: 126.9780 }])
+    .ringColor(() => 'rgba(138,107,46,0.7)')
+    .ringMaxRadius(3.5)
+    .ringPropagationSpeed(1.5)
+    .ringRepeatPeriod(900)
+    .arcsData(arcs)
+    .arcColor(d => d.color === 'japan'
+      ? ['rgba(138,107,46,0.9)', 'rgba(184,48,48,0.9)']
+      : d.color === 'yellow'
+      ? ['rgba(255,210,0,0.9)', 'rgba(255,240,100,0.9)']
+      : ['rgba(26,111,196,0.9)', 'rgba(100,180,255,0.9)'])
+    .arcAltitude(d => d.alt)
+    .arcStroke(0.5)
+    .arcDashLength(0.45)
+    .arcDashGap(0.25)
+    .arcDashAnimateTime(4000)
+    .labelsData(cities)
+    .labelText('name')
+    .labelSize(0.7)
+    .labelDotRadius(0.4)
+    .labelColor('color')
+    .labelResolution(2)
+    .labelAltitude(0.02)
+    (document.getElementById('globeViz'));
+
+  world.pointOfView({ lat: 36, lng: 131, altitude: 1.8 }, 0);
+
+  const globeMaterial = world.globeMaterial();
+  globeMaterial.shininess = 0;
+  globeMaterial.specular = new THREE.Color(0x000000);
+
+  const ambientLight = world.lights().find(l => l.type === 'AmbientLight');
+  if (ambientLight) ambientLight.intensity = 1.6;
+
+  const dirLight = world.lights().find(l => l.type === 'DirectionalLight');
+  if (dirLight) {
+    dirLight.intensity = 0.6;
+    dirLight.position.set(1, 1, 1);
+  }
+</script>
+
+<script>
+const countries = {
+  "아시아": [
+    { name: "일본", flag: "🇯🇵", age: "18~25세 (예외 30세)", method: "서류심사", quota: "10,000명", apply: "연 4회, 1/4/7/10월", note: "이유서·계획서 제출 필수. 대행기관을 통해서만 신청 가능. 2026년 기준 1분기 1/19~23, 2분기 4/13~17, 3분기 7/13~17, 4분기 10/12~16. 초기자금 280만원 이상 필수." },
+    { name: "홍콩", flag: "🇭🇰", age: "18~30세", method: "선착순", quota: "1,000명", apply: "상시 신청", note: "온라인 신청. 평생 1회 한정." },
+    { name: "대만", flag: "🇹🇼", age: "18~30세", method: "선착순", quota: "800명", apply: "상시 신청", note: "방문 신청. 800명 쿼터 마감 시 종료." },
+    { name: "이스라엘", flag: "🇮🇱", age: "18~30세", method: "추첨", quota: "200명", apply: "상시 신청", note: "이메일 및 방문 신청." },
+  ],
+  "오세아니아": [
+    { name: "호주", flag: "🇦🇺", age: "18~30세", method: "제한없음", quota: "제한없음", apply: "상시 신청", note: "온라인 신청. 인원 제한 없이 상시 지원 가능. 2024년 비자 발급 1위(16,709건). 특정 지역 근무 시 2차·3차 비자 연장 가능." },
+    { name: "뉴질랜드", flag: "🇳🇿", age: "18~30세", method: "선착순", quota: "3,000명", apply: "5월경", note: "온라인 신청. 매년 5월경 선착순 모집. 특정 업종 3개월 이상 종사 시 연장 가능." },
+  ],
+  "유럽": [
+    { name: "영국 (YMS)", flag: "🇬🇧", age: "18~30세", method: "추첨", quota: "5,000명", apply: "상시 신청", note: "온라인 및 방문 신청. YMS(청년교류제도)로 운영. 2024년부터 쿼터 1천→5천명 대폭 확대. 공인 영어 성적 필요." },
+    { name: "프랑스", flag: "🇫🇷", age: "18~30세", method: "선착순", quota: "2,000명", apply: "상시 신청", note: "방문 신청." },
+    { name: "독일", flag: "🇩🇪", age: "18~30세", method: "제한없음", quota: "제한없음", apply: "상시 신청", note: "방문 신청. 인원 제한 없음. 주요 도시 주거비 높은 편. 독일어 능력 있으면 취업에 유리." },
+    { name: "아일랜드", flag: "🇮🇪", age: "18~34세", method: "추첨", quota: "800명", apply: "연 2회, 5/10월경", note: "이메일 및 우편 신청. 연 2회 모집. 2023년 협정 개정으로 나이 상한 확대." },
+    { name: "스웨덴", flag: "🇸🇪", age: "18~30세", method: "제한없음", quota: "제한없음", apply: "상시 신청", note: "온라인 및 방문 신청. 인원 제한 없음." },
+    { name: "덴마크", flag: "🇩🇰", age: "18~30세", method: "제한없음", quota: "제한없음", apply: "상시 신청", note: "온라인 및 방문 신청. 인원 제한 없음." },
+    { name: "네덜란드", flag: "🇳🇱", age: "18~30세", method: "서류심사", quota: "200명", apply: "상시 신청", note: "이메일 및 현지 신청. 신청 후 네덜란드 현지에서 체류허가 별도 신청 필요." },
+    { name: "벨기에", flag: "🇧🇪", age: "18~30세", method: "추첨", quota: "200명", apply: "상시 신청", note: "방문 신청. 무작위 추첨." },
+    { name: "오스트리아", flag: "🇦🇹", age: "18~30세", method: "선착순", quota: "300명", apply: "상시 신청", note: "방문 신청." },
+    { name: "이탈리아", flag: "🇮🇹", age: "18~30세", method: "선착순", quota: "500명", apply: "상시 신청", note: "방문 신청." },
+    { name: "스페인", flag: "🇪🇸", age: "18~30세", method: "추첨", quota: "1,000명", apply: "상시 신청", note: "방문 신청." },
+    { name: "포르투갈", flag: "🇵🇹", age: "18~30세", method: "선착순", quota: "200명", apply: "상시 신청", note: "방문 신청." },
+    { name: "폴란드", flag: "🇵🇱", age: "18~30세", method: "선착순", quota: "200명", apply: "상시 신청", note: "방문 신청." },
+    { name: "체코", flag: "🇨🇿", age: "18~30세", method: "선착순", quota: "300명", apply: "상시 신청", note: "방문 신청." },
+    { name: "헝가리", flag: "🇭🇺", age: "18~30세", method: "선착순", quota: "100명", apply: "상시 신청", note: "현지 신청." },
+    { name: "룩셈부르크", flag: "🇱🇺", age: "18~30세", method: "선착순", quota: "100명", apply: "상시 신청", note: "방문 신청." },
+    { name: "라트비아", flag: "🇱🇻", age: "18~30세", method: "서류심사", quota: "100명", apply: "상시 신청", note: "현지 신청. 2024년 협정 서명. 발트3국 중 하나. 쉥겐 지역 여행 가능." },
+    { name: "안도라", flag: "🇦🇩", age: "18~30세", method: "서류심사", quota: "50명", apply: "상시 신청", note: "온라인 및 현지 신청. 프랑스·스페인 사이 소국." },
+    { name: "핀란드", flag: "🇫🇮", age: "18~35세", method: "미정", quota: "미정", apply: "미정", note: "2026년 5월 13일 한-핀란드 워킹홀리데이 협정 서명. 양국이 각각 국내 절차 완료를 상대국에 통보한 날로부터 60일 후 발효. 쿼터·신청 방법 등 세부 사항은 발효 후 공개 예정." },
+  ],
+  "아메리카": [
+    { name: "캐나다", flag: "🇨🇦", age: "18~35세", method: "추첨", quota: "10,000명", apply: "이민국 공지 확인", note: "온라인 신청. 2024년부터 나이 상한 35세·쿼터 대폭 확대. 무작위 추첨. 평생 2회까지 신청 가능." },
+    { name: "브라질", flag: "🇧🇷", age: "18~30세", method: "선착순", quota: "300명", apply: "상시 신청", note: "방문 신청. 포르투갈어 기본 소통 능력 권장." },
+    { name: "아르헨티나", flag: "🇦🇷", age: "18~30세", method: "선착순", quota: "200명", apply: "상시 신청", note: "방문 신청." },
+    { name: "칠레", flag: "🇨🇱", age: "18~30세", method: "제한없음", quota: "제한없음", apply: "상시 신청", note: "온라인 신청. 인원 제한 없음." },
+  ],
+};
+
+const regions = Object.keys(countries);
+let activeRegion = regions[0];
+let selectedCard = null;
+
+function renderTabs() {
+  document.getElementById('tabs').innerHTML = regions.map(r =>
+    `<button class="ctab-btn${r === activeRegion ? ' active' : ''}" onclick="selectTab('${r}')">${r} <span class="ctab-cnt">${countries[r].length}</span></button>`
+  ).join('');
+}
+function renderCards() {
+  document.getElementById('cards').innerHTML = countries[activeRegion].map((c, i) => `
+    <div class="ccard${selectedCard && selectedCard.name === c.name ? ' selected' : ''}" onclick="selectCard(${i})">
+      <span class="ccard-flag">${c.flag}</span>
+      <p class="ccard-name">${c.name}</p>
+    </div>
+  `).join('');
+}
+function selectTab(region) {
+  activeRegion = region; selectedCard = null;
+  document.getElementById('detail').classList.remove('visible');
+  renderTabs(); renderCards();
+}
+function selectCard(i) {
+  const c = countries[activeRegion][i];
+  if (selectedCard && selectedCard.name === c.name) { closeDetail(); return; }
+  selectedCard = c; renderCards();
+  document.getElementById('d-flag').textContent = c.flag;
+  document.getElementById('d-name').textContent = c.name;
+  document.getElementById('d-region').textContent = activeRegion;
+  document.getElementById('d-grid').innerHTML = `
+    <div class="cinfo-item"><p class="cinfo-label">신청 가능 나이</p><p class="cinfo-value">${c.age}</p></div>
+    <div class="cinfo-item"><p class="cinfo-label">선정 방식</p><p class="cinfo-value">${c.method}</p></div>
+    <div class="cinfo-item"><p class="cinfo-label">모집 인원</p><p class="cinfo-value">${c.quota}</p></div>
+    <div class="cinfo-item"><p class="cinfo-label">신청 기간</p><p class="cinfo-value">${c.apply}</p></div>
+  `;
+  document.getElementById('d-note').textContent = c.note;
+  document.getElementById('detail').classList.add('visible');
+  document.getElementById('detail').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+function closeDetail() {
+  selectedCard = null;
+  document.getElementById('detail').classList.remove('visible');
+  renderCards();
+}
+renderTabs(); renderCards();
+</script>
+
+</body>
+</html>
