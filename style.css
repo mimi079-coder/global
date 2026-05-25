@@ -342,6 +342,122 @@ html, body {
   margin-top: 8px;
   line-height: 1.6;
 }
+.art-figure {
+  margin: 24px 0;
+}
+
+/* Interactive vote chart */
+.vote-wrap {
+  margin: 28px 0;
+  padding: 24px;
+  border: 1px solid rgba(138,107,46,0.3);
+  border-radius: 10px;
+  background: rgba(138,107,46,0.05);
+}
+.vote-heading {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 0.95em;
+  font-weight: 700;
+  color: var(--gold, #c8a84b);
+  margin: 0 0 18px;
+  text-align: center;
+  letter-spacing: 0.03em;
+}
+.vote-chart-row {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 20px;
+}
+.vote-chart-row canvas {
+  flex-shrink: 0;
+}
+.vote-legend {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.vl-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.vl-dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.vl-label {
+  font-size: 0.8em;
+  color: var(--ink, #2c2416);
+  flex: 1;
+  line-height: 1.4;
+}
+.vl-pct {
+  font-size: 0.8em;
+  font-weight: 700;
+  color: var(--gold, #c8a84b);
+  min-width: 34px;
+  text-align: right;
+}
+.vote-btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+.vote-btn {
+  padding: 7px 14px;
+  border: 1.5px solid rgba(138,107,46,0.5);
+  border-radius: 20px;
+  background: transparent;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 0.78em;
+  color: var(--ink, #2c2416);
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+.vote-btn:hover {
+  background: rgba(138,107,46,0.12);
+  border-color: var(--gold, #c8a84b);
+}
+.vote-btn.voted {
+  background: var(--gold, #c8a84b);
+  border-color: var(--gold, #c8a84b);
+  color: #fff;
+  font-weight: 700;
+}
+.vote-total {
+  text-align: center;
+  font-size: 0.78em;
+  color: var(--muted, #9a8a6a);
+  margin: 0;
+}
+.art-figure img {
+  width: 100%;
+  display: block;
+  border-radius: 6px;
+}
+.art-figure-person {
+  max-width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.art-figure figcaption {
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 0.3px;
+  margin-top: 8px;
+  line-height: 1.6;
+  text-align: center;
+}
 
 /* ── MAIN ARTICLE SECTION ── */
 .ma-section {
