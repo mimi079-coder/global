@@ -67,8 +67,8 @@ html, body {
 }
 .globe-wrap {
   position: relative;
-  width: 520px;
-  height: 520px;
+  width: min(520px, 85vw);
+  height: min(520px, 85vw);
 }
 .globe-wrap::before {
   content: '';
@@ -1244,7 +1244,7 @@ html, body {
 @media (max-width: 900px) {
   .photo-story-grid { grid-template-columns: repeat(3, 1fr); }
   .tickets-row { flex-direction: column; align-items: center; }
-  .start-header h1 { font-size: 42px; letter-spacing: 5px; }
+  .start-header h1 { font-size: 38px; letter-spacing: 6px; }
   .art-page { padding: 40px 24px 60px; }
   .photo-story { padding: 0 24px 60px; }
   .art-hero { grid-template-columns: 1fr; grid-template-rows: auto auto; }
@@ -1615,4 +1615,81 @@ html, body {
 }
 @media (max-width: 900px) {
   .read-nav { display: none; }
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  /* Hero */
+  .start-header { padding: 36px 24px 28px; }
+  .start-header h1 { font-size: 38px; letter-spacing: 6px; }
+  .start-header .tagline { font-size: 13px; letter-spacing: 3px; }
+
+  /* Globe */
+  .globe-section { padding: 32px 16px 20px; }
+
+  /* Tickets */
+  .tickets-section { padding: 12px 20px 40px; }
+  .ticket { width: 100%; max-width: 360px; }
+
+  /* Countries */
+  .countries-label { font-size: 20px; }
+
+  /* Art header */
+  .art-header { padding: 16px 24px; }
+
+  /* Main article */
+  .ma-section { padding: 40px 20px 60px; }
+  .ma-title { font-size: 24px; }
+}
+
+@media (max-width: 640px) {
+  /* Hero */
+  .start-header h1 { font-size: 28px; letter-spacing: 3px; }
+  .start-header .tagline { font-size: 12px; letter-spacing: 2px; }
+
+  /* Ticket */
+  .ticket { padding: 18px 20px; }
+  .t-code { font-size: 28px; }
+  .t-foot { gap: 14px; }
+
+  /* Countries */
+  .countries-label { font-size: 18px; }
+  .ccards-grid { grid-template-columns: repeat(2, 1fr); }
+
+  /* Article */
+  .art-title { font-size: 24px; }
+  .art-lead-text { font-size: 14px; }
+  .qa-q { font-size: 15px; }
+  .qa-a { font-size: 14px; }
+  .art-figure-person { max-width: 80%; }
+
+  /* Chat */
+  .chat-phone { width: 100%; border-radius: 20px; }
+}
+
+@media (max-width: 480px) {
+  /* Hero */
+  .start-header h1 { font-size: 22px; letter-spacing: 1px; }
+  .start-header .tagline { font-size: 11px; letter-spacing: 1px; margin-top: 10px; }
+
+  /* Globe */
+  .globe-section { padding: 20px 12px 12px; }
+
+  /* Ticket */
+  .t-code { font-size: 24px; }
+  .t-divider { margin: 14px -20px; }
+
+  /* Countries */
+  .ctab-bar { gap: 6px; }
+  .ctab-btn { padding: 5px 12px; font-size: 11px; }
+
+  /* Article */
+  .art-header { padding: 14px 16px; }
+  .art-header .mag-mini { font-size: 12px; }
+  .ma-title { font-size: 20px; }
+  .ma-sub-heading { font-size: 14px; }
+  .ma-body { font-size: 14px; }
+
+  /* Chat trigger */
+  .chat-trigger { font-size: 0.82em; padding: 10px 14px; }
 }

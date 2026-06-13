@@ -110,9 +110,10 @@
     { startLat: 37.5665, startLng: 126.9780, endLat: 51.5074, endLng: -0.1278, color: 'blue', alt: 0.15 }
   ];
 
+  const globeSize = Math.min(Math.round(window.innerWidth * 0.85), 520);
   const world = Globe()
-    .width(520)
-    .height(520)
+    .width(globeSize)
+    .height(globeSize)
     .backgroundColor('rgba(0,0,0,0)')
     .globeImageUrl('https://cdn.jsdelivr.net/npm/three-globe/example/img/earth-day.jpg')
     .showAtmosphere(false)
@@ -144,6 +145,11 @@
     (document.getElementById('globeViz'));
 
   world.pointOfView({ lat: 36, lng: 131, altitude: 1.8 }, 0);
+
+  window.addEventListener('resize', () => {
+    const newSize = Math.min(Math.round(window.innerWidth * 0.85), 520);
+    world.width(newSize).height(newSize);
+  });
 
   const globeMaterial = world.globeMaterial();
   globeMaterial.shininess = 0;
