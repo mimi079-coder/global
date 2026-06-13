@@ -10,7 +10,6 @@
 <body>
 
 <header class="start-header">
-  <div class="vol">Vol. 1 &nbsp;·&nbsp; 2026</div>
   <h1>우리는 해외파 청년들</h1>
   <p class="tagline">경계 너머의 이야기</p>
 </header>
@@ -94,8 +93,8 @@
   import * as THREE from 'https://esm.sh/three';
 
   const cities = [
-    { lat: 37.5665, lng: 126.9780, name: '서울', color: '#8a6b2e' },
-    { lat: 34.6937, lng: 135.5023, name: '오사카', color: '#b83030' },
+    { lat: 37.5665, lng: 126.9780, name: '서울', color: '#e85c3a' },
+    { lat: 34.6937, lng: 135.5023, name: '오사카', color: '#1a6fc4' },
     { lat: -33.8688, lng: 151.2093, name: '시드니', color: '#1a6fc4' },
     { lat: -36.8485, lng: 174.7633, name: '오클랜드', color: '#1a6fc4' },
     { lat: 45.4215, lng: -75.6972, name: '오타와', color: '#1a6fc4' },
@@ -103,7 +102,7 @@
   ];
 
   const arcs = [
-    { startLat: 37.5665, startLng: 126.9780, endLat: 34.6937, endLng: 135.5023, color: 'japan', alt: 0.04 },
+    { startLat: 37.5665, startLng: 126.9780, endLat: 34.6937, endLng: 135.5023, color: 'blue', alt: 0.04 },
     { startLat: 37.5665, startLng: 126.9780, endLat: -33.8688, endLng: 151.2093, color: 'blue', alt: 0.10 },
     { startLat: 37.5665, startLng: 126.9780, endLat: -33.8688, endLng: 151.2093, color: 'yellow', alt: 0.22 },
     { startLat: 37.5665, startLng: 126.9780, endLat: -36.8485, endLng: 174.7633, color: 'blue', alt: 0.15 },
@@ -114,25 +113,21 @@
   const world = Globe()
     .width(520)
     .height(520)
-    .backgroundColor('#edf2ff')
+    .backgroundColor('rgba(0,0,0,0)')
     .globeImageUrl('https://cdn.jsdelivr.net/npm/three-globe/example/img/earth-day.jpg')
-    .showAtmosphere(true)
-    .atmosphereColor('#5599ee')
-    .atmosphereAltitude(0.28)
+    .showAtmosphere(false)
     .pointsData(cities)
     .pointColor('color')
     .pointAltitude(0.01)
     .pointRadius(0.5)
     .ringsData([{ lat: 37.5665, lng: 126.9780 }])
-    .ringColor(() => 'rgba(138,107,46,0.7)')
+    .ringColor(() => 'rgba(232,92,58,0.7)')
     .ringMaxRadius(3.5)
     .ringPropagationSpeed(1.5)
     .ringRepeatPeriod(900)
     .arcsData(arcs)
-    .arcColor(d => d.color === 'japan'
-      ? ['rgba(138,107,46,0.9)', 'rgba(184,48,48,0.9)']
-      : d.color === 'yellow'
-      ? ['rgba(255,210,0,0.9)', 'rgba(255,240,100,0.9)']
+    .arcColor(d => d.color === 'yellow'
+      ? ['rgba(180,220,255,0.9)', 'rgba(30,114,192,0.9)']
       : ['rgba(26,111,196,0.9)', 'rgba(100,180,255,0.9)'])
     .arcAltitude(d => d.alt)
     .arcStroke(0.5)
